@@ -1,0 +1,23 @@
+#searchButton{
+   height: 40px;
+    width: 50px;
+    border-radius: 200%;
+
+}
+.icon{
+    height: 20px;
+    width: 20px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height:50vh;
+}
+#inputField{
+    height: 25px;
+    width: 200px;
+    border-radius: 2px;
+    padding: 5px;
+}
