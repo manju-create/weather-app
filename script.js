@@ -12,16 +12,21 @@ async function getWeather(city) {
 
     const data = await response.json();
     const weather = await data.main.temp;
+    const resultingCity = await data.name;
     const description = await data.weather[0].description;
     document.querySelector(".result").innerHTML = `
-<h2> ${city}</h2>
-<h3> ${weather}°C</h3>
+<h2> ${resultingCity}</h2>
+<h3> ${Math.round(weather)}°C</h3>
 
 
 <p> ${description}</p>`;
     changebg(weather);
+    // After successful search
+document.getElementById("inputField").value = "";
   } catch (error) {
     console.log(error.message);
+     document.querySelector(".result").innerHTML = `
+<h2 style="color: red;"> City not found</h2>`;
   }
 }
 inputField.addEventListener("keypress", function (e) {
